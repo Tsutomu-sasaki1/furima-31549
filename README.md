@@ -4,17 +4,17 @@
 
 ## user テーブル
 
-| Column           | Type   | Options     |
-| ---------------- | ------ | ----------- |
-| email            | string | null: false |
-| password         | string | null: false |
-| nickname         | string | null: false |
-| name-first       | string | null: false |
-| name-second      | string | null: false |
-| name-kana-first  | string | null: false |
-| name-kana-second | string | null: false |
-| birthday         | date   | null: false |
-| mail-address     | string | null: false |
+| Column           | Type   | Options                   |
+| ---------------- | ------ | ------------------------- |
+| email            | string | null: false               |
+| password         | string | null: false               |
+| nickname         | string | null: false               |
+| name-first       | string | null: false               |
+| name-second      | string | null: false               |
+| name-kana-first  | string | null: false               |
+| name-kana-second | string | null: false               |
+| birthday         | date   | null: false               |
+| mail-address     | string | null: false, unique: true |
 
 ### Association
 
