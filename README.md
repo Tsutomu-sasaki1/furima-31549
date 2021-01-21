@@ -31,7 +31,7 @@
 | condition        | string        | null: false                    |
 | shipping-area    | string        | null: false                    |
 | date-of-shipment | string        | null: false                    |
-| price            | string        | null: false                    |
+| price            | integer       | null: false                    |
 | shipping-charges | string        | null: false                    |
 | explanation      | string        | null: false                    |
 | user             | references    | null: false, foreign_key: true |
