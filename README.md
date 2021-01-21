@@ -56,19 +56,19 @@
 
 ### Association
 
-- belongs_to : history
+- has_one : history
 
 ## histories　(中間)テーブル
 
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| user      | references | null: false, foreign_key: true |
-| sell-item | references | null: false, foreign_key: true |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| addresses_id | references | null: false, foreign_key: true |
+| sell-item_id | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to : sell-item
-- belongs_to : user
+- belongs_to : addresses
 
 ## comments テーブル
 
