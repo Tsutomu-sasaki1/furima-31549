@@ -56,7 +56,7 @@
 
 ### Association
 
-- has_one : history
+- belongs_to : history
 
 ## histories　(中間)テーブル
 
@@ -68,7 +68,7 @@
 ### Association
 
 - belongs_to : sell-item
-- belongs_to : addresses
+- has_one : addresses
 
 ## comments テーブル
 
