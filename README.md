@@ -38,7 +38,7 @@
 
 ### Association
 
-- has_many : histories
+- has_one : histories
 - belongs_to : user
 - has_many : comments
 
