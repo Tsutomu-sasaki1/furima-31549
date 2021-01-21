@@ -21,7 +21,6 @@
 - has_many : histories
 - has_many : sell-items
 - has_many : comments
-- has_one : address
 
 ## sell-item テーブル
 
