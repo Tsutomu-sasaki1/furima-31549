@@ -24,17 +24,17 @@
 
 ## sell-item テーブル
 
-| Column           | Type          | Options                        |
-| ---------------- | ------------- | ------------------------------ |
-| item-name        | string        | null: false                    |
-| category         | string        | null: false                    |
-| condition        | string        | null: false                    |
-| shipping-area    | string        | null: false                    |
-| date-of-shipment | string        | null: false                    |
-| price            | integer       | null: false                    |
-| shipping-charges | string        | null: false                    |
-| explanation      | text          | null: false                    |
-| user             | references    | null: false, foreign_key: true |
+| Column              | Type          | Options                        |
+| ----------------    | ------------- | ------------------------------ |
+| item-name_id        | string        | null: false                    |
+| category_id         | integer       | null: false                    |
+| condition_id        | integer       | null: false                    |
+| shipping-area_id    | integer       | null: false                    |
+| date-of-shipment_id | integer       | null: false                    |
+| price_id            | integer       | null: false                    |
+| shipping-charges_id | string        | null: false                    |
+| explanation_id      | text          | null: false                    |
+| user_id             | references    | null: false, foreign_key: true |
 
 ### Association
 
