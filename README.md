@@ -52,11 +52,11 @@
 | address          | string        | null: false                    |
 | building         | string        |                                |
 | phone-number     | string        | null: false                    |
-| user             | references    | null: false, foreign_key: true |
+| histories_id     | references    | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to : user
+- belongs_to : history
 
 ## histories　(中間)テーブル
 
