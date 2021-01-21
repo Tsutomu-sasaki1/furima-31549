@@ -15,7 +15,6 @@
 | name-kana-first   | string | null: false               |
 | name-kana-second  | string | null: false               |
 | birthday          | date   | null: false               |
-| mail-address      | string | null: false, unique: true |
 
 ### Association
 
