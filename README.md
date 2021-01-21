@@ -29,7 +29,6 @@
 | item-name        | string        | null: false                    |
 | category         | string        | null: false                    |
 | condition        | string        | null: false                    |
-| image            | ActiveStorage | null: false                    |
 | shipping-area    | string        | null: false                    |
 | date-of-shipment | string        | null: false                    |
 | price            | string        | null: false                    |
