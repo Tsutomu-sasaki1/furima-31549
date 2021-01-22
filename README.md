@@ -30,7 +30,7 @@
 | shipping_area_id    | integer       | null: false                    |
 | date_of_shipment_id | integer       | null: false                    |
 | price_id            | integer       | null: false                    |
-| shipping_charges    | string        | null: false                    |
+| shipping_charge_id  | integer       | null: false                    |
 | explanation         | text          | null: false                    |
 | user                | references    | null: false, foreign_key: true |
 
@@ -49,7 +49,7 @@
 | address          | string        | null: false                    |
 | building         | string        |                                |
 | phone_number     | string        | null: false                    |
-| history       | references    | null: false, foreign_key: true |
+| history          | references    | null: false, foreign_key: true |
 
 ### Association
 
