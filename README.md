@@ -9,29 +9,29 @@
 | email             | string | null: false, unique: true |
 | encrypted_password| string | null: false               |
 | nickname          | string | null: false               |
-| name-first        | string | null: false               |
-| name-second       | string | null: false               |
-| name-kana-first   | string | null: false               |
-| name-kana-second  | string | null: false               |
+| name_first        | string | null: false               |
+| name_second       | string | null: false               |
+| name_kana_first   | string | null: false               |
+| name_kana_second  | string | null: false               |
 | birthday          | date   | null: false               |
 
 ### Association
 
 - has_many : histories
-- has_many : sell-items
+- has_many : sell_items
 - has_many : comments
 
-## sell-item テーブル
+## sell_item テーブル
 
 | Column              | Type          | Options                        |
 | ----------------    | ------------- | ------------------------------ |
-| item-name_id        | string        | null: false                    |
+| item_name_id        | string        | null: false                    |
 | category_id         | integer       | null: false                    |
 | condition_id        | integer       | null: false                    |
-| shipping-area_id    | integer       | null: false                    |
-| date-of-shipment_id | integer       | null: false                    |
+| shipping_area_id    | integer       | null: false                    |
+| date_of_shipment_id | integer       | null: false                    |
 | price_id            | integer       | null: false                    |
-| shipping-charges_id | string        | null: false                    |
+| shipping_charges_id | string        | null: false                    |
 | explanation_id      | text          | null: false                    |
 | user_id             | references    | null: false, foreign_key: true |
 
@@ -45,12 +45,12 @@
 
 | Column           | Type          | Options                        |
 | ---------------- | ------------- | ------------------------------ |
-| postal-code      | string        | null: false                    |
+| postal_code      | string        | null: false                    |
 | prefectures      | integer       | null: false                    |
 | city             | string        | null: false                    |
 | address          | string        | null: false                    |
 | building         | string        |                                |
-| phone-number     | string        | null: false                    |
+| phone_number     | string        | null: false                    |
 | histories_id     | references    | null: false, foreign_key: true |
 
 ### Association
@@ -62,11 +62,11 @@
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | addresses_id | references | null: false, foreign_key: true |
-| sell-item_id | references | null: false, foreign_key: true |
+| sell_item_id | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to : sell-item
+- belongs_to : sell_item
 - has_one : addresses
 
 ## comments テーブル
@@ -75,9 +75,9 @@
 | -------------- | ---------- | ------------------------------ |
 | text           | string     | null: false                    |
 | user           | references | null: false, foreign_key: true |
-| sell-item      | references | null: false, foreign_key: true |
+| sell_item      | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to : sell-item
+- belongs_to : sell_item
 - belongs_to : user
