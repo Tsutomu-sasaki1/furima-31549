@@ -69,15 +69,3 @@
 - belongs_to : sell_item
 - has_one : addresses
 
-## comments テーブル
-
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------------------------------ |
-| text           | string     | null: false                    |
-| user           | references | null: false, foreign_key: true |
-| sell_item      | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to : sell_item
-- belongs_to : user
