@@ -19,7 +19,6 @@
 
 - has_many : histories
 - has_many : sell_items
-- has_many : comments
 
 ## sell_item テーブル
 
@@ -39,7 +38,6 @@
 
 - has_one : histories
 - belongs_to : user
-- has_many : comments
 
 ## addresses テーブル
 
@@ -61,11 +59,10 @@
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| addresses    | references | null: false, foreign_key: true |
+| user         | references | null: false, foreign_key: true |
 | sell_item    | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to : sell_item
-- has_one : addresses
-
+- belongs_to : user
