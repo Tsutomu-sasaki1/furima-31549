@@ -36,7 +36,7 @@
 
 ### Association
 
-- has_one : histories
+- has_one : history
 - belongs_to : user
 
 ## addresses テーブル
