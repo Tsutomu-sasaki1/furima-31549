@@ -20,7 +20,7 @@
 - has_many : histories
 - has_many : sell_items
 
-## sell_item テーブル
+## sell_items テーブル
 
 | Column              | Type          | Options                        |
 | ----------------    | ------------- | ------------------------------ |
