@@ -25,15 +25,15 @@
 
 | Column              | Type          | Options                        |
 | ----------------    | ------------- | ------------------------------ |
-| item_name_id        | string        | null: false                    |
+| item_name           | string        | null: false                    |
 | category_id         | integer       | null: false                    |
 | condition_id        | integer       | null: false                    |
 | shipping_area_id    | integer       | null: false                    |
 | date_of_shipment_id | integer       | null: false                    |
 | price_id            | integer       | null: false                    |
-| shipping_charges_id | string        | null: false                    |
-| explanation_id      | text          | null: false                    |
-| user_id             | references    | null: false, foreign_key: true |
+| shipping_charges    | string        | null: false                    |
+| explanation         | text          | null: false                    |
+| user                | references    | null: false, foreign_key: true |
 
 ### Association
 
@@ -51,7 +51,7 @@
 | address          | string        | null: false                    |
 | building         | string        |                                |
 | phone_number     | string        | null: false                    |
-| histories_id     | references    | null: false, foreign_key: true |
+| histories        | references    | null: false, foreign_key: true |
 
 ### Association
 
@@ -61,8 +61,8 @@
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| addresses_id | references | null: false, foreign_key: true |
-| sell_item_id | references | null: false, foreign_key: true |
+| addresses    | references | null: false, foreign_key: true |
+| sell_item    | references | null: false, foreign_key: true |
 
 ### Association
 
