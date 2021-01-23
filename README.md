@@ -18,9 +18,9 @@
 ### Association
 
 - has_many : histories
-- has_many : sell_items
+- has_many : items
 
-## sell_items テーブル
+## items テーブル
 
 | Column              | Type          | Options                        |
 | ----------------    | ------------- | ------------------------------ |
@@ -60,10 +60,10 @@ belongs_to : history
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | user         | references | null: false, foreign_key: true |
-| sell_item    | references | null: false, foreign_key: true |
+| item         | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to : sell_item
+- belongs_to : item
 - belongs_to : user
 - has_one : address
