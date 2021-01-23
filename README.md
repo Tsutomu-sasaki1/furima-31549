@@ -54,6 +54,7 @@
 ### Association
 
 - belongs_to : history
+- has_one : history
 
 ## histories　(中間)テーブル
 
@@ -61,8 +62,11 @@
 | ------------ | ---------- | ------------------------------ |
 | user         | references | null: false, foreign_key: true |
 | sell_item    | references | null: false, foreign_key: true |
+| address      | references | null: false, foreign_key: true |
+
 
 ### Association
 
 - belongs_to : sell_item
 - belongs_to : user
+- belongs_to : address
