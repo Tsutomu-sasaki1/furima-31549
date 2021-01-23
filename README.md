@@ -1,24 +1,69 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テーブル設計
 
-Things you may want to cover:
+## users テーブル
 
-* Ruby version
+| Column            | Type   | Options                   |
+| ----------------- | ------ | ------------------------- |
+| email             | string | null: false, unique: true |
+| encrypted_password| string | null: false               |
+| nickname          | string | null: false               |
+| name_first        | string | null: false               |
+| name_second       | string | null: false               |
+| name_kana_first   | string | null: false               |
+| name_kana_second  | string | null: false               |
+| birthday          | date   | null: false               |
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many : histories
+- has_many : sell_items
 
-* Database creation
+## sell_items テーブル
 
-* Database initialization
+| Column              | Type          | Options                        |
+| ----------------    | ------------- | ------------------------------ |
+| name          　　　 | string        | null: false                    |
+| category_id         | integer       | null: false                    |
+| condition_id        | integer       | null: false                    |
+| prefectures_id      | integer       | null: false                    |
+| date_of_shipment_id | integer       | null: false                    |
+| price               | integer       | null: false                    |
+| shipping_charge_id  | integer       | null: false                    |
+| explanation         | text          | null: false                    |
+| user                | references    | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- has_one : history
+- belongs_to : user
 
-* Deployment instructions
+## addresses 住所（発送先）テーブル
 
-* ...
+| Column           | Type          | Options                        |
+| ---------------- | ------------- | ------------------------------ |
+| postal_code      | string        | null: false                    |
+| prefectures_id   | integer       | null: false                    |
+| city             | string        | null: false                    |
+| address          | string        | null: false                    |
+| building         | string        |                                |
+| phone_number     | string        | null: false                    |
+| history          | references    | null: false, foreign_key: true |
+
+### Association
+
+belongs_to : history
+
+## histories　購入管理(中間)テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| user         | references | null: false, foreign_key: true |
+| sell_item    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to : sell_item
+- belongs_to : user
+- has_one : address
