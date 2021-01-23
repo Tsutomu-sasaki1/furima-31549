@@ -27,7 +27,7 @@
 | name          　　　 | string        | null: false                    |
 | category_id         | integer       | null: false                    |
 | condition_id        | integer       | null: false                    |
-| shipping_area_id    | integer       | null: false                    |
+| prefectures_id      | integer       | null: false                    |
 | date_of_shipment_id | integer       | null: false                    |
 | price               | integer       | null: false                    |
 | shipping_charge_id  | integer       | null: false                    |
