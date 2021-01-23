@@ -24,12 +24,12 @@
 
 | Column              | Type          | Options                        |
 | ----------------    | ------------- | ------------------------------ |
-| name           | string        | null: false                    |
+| name          　　　 | string        | null: false                    |
 | category_id         | integer       | null: false                    |
 | condition_id        | integer       | null: false                    |
 | shipping_area_id    | integer       | null: false                    |
 | date_of_shipment_id | integer       | null: false                    |
-| price_id            | integer       | null: false                    |
+| price               | integer       | null: false                    |
 | shipping_charge_id  | integer       | null: false                    |
 | explanation         | text          | null: false                    |
 | user                | references    | null: false, foreign_key: true |
