@@ -39,7 +39,7 @@
 - has_one : history
 - belongs_to : user
 
-## addresses テーブル
+## addresses 住所（発送先）テーブル
 
 | Column           | Type          | Options                        |
 | ---------------- | ------------- | ------------------------------ |
@@ -49,24 +49,17 @@
 | address          | string        | null: false                    |
 | building         | string        |                                |
 | phone_number     | string        | null: false                    |
-| history          | references    | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to : history
-- has_one : history
-
-## histories　(中間)テーブル
+## histories　購入管理(中間)テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | user         | references | null: false, foreign_key: true |
 | sell_item    | references | null: false, foreign_key: true |
-| address      | references | null: false, foreign_key: true |
-
 
 ### Association
 
 - belongs_to : sell_item
 - belongs_to : user
-- belongs_to : address
