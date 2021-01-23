@@ -24,7 +24,7 @@
 
 | Column              | Type          | Options                        |
 | ----------------    | ------------- | ------------------------------ |
-| item_name           | string        | null: false                    |
+| name           | string        | null: false                    |
 | category_id         | integer       | null: false                    |
 | condition_id        | integer       | null: false                    |
 | shipping_area_id    | integer       | null: false                    |
