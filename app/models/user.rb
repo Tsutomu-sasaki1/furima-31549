@@ -7,8 +7,7 @@ class User < ApplicationRecord
   has_many :histories,         dependent: :destroy
   has_many :items,             dependent: :destroy
 
-  validates :birthday,              presence: true
-  validates :nickname,              presence: true
+  validates :birthday, :nickname,              presence: true
 
   # 全角ひらがな、全角カタカナ、漢字（鬼車）のみ
   NAME_REGEX = /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/.freeze
