@@ -55,7 +55,7 @@
 
 belongs_to : history
 
-## histories　購入管理(中間)テーブル
+## histories  購入管理(中間)テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |

@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
 
   def create
@@ -22,5 +23,9 @@ class ItemsController < ApplicationController
 
   # def
   # end
+
+  def item_params
+    params.require(:item).permit(:image).merge(user_id: current_user.id)
+  end
   
 end
