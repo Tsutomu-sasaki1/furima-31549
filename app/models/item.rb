@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   validates :shipping_charge_id,   presence: true
   validates :explanation,          presence: true
 
-  has_one :history
+  has_one :history, :list
   belongs_to :user
   has_one_attached :image
 end
