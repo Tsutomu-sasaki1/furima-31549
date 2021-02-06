@@ -1,14 +1,19 @@
 class Item < ApplicationRecord
-  validates :item_name,            presence: true
-  validates :category_id,          presence: true
-  validates :condition_id,         presence: true
-  validates :prefectures_id,       presence: true
-  validates :date_of_shipment_id,  presence: true
-  validates :price,                presence: true
-  validates :shipping_charge_id,   presence: true
-  validates :explanation,          presence: true
+  extend ActiveHash::Associations::ActiveRecordExtensions
 
-  has_one :history, :list
+  validates :item_name,            presence: true
+  validates :category_id,          presence: true, numericality: { other_than: 1}
+  validates :condition_id,         presence: true, numericality: { other_than: 1}
+  validates :prefectures_id,       presence: true, numericality: { other_than: 1}
+  validates :date_of_shipment_id,  presence: true, numericality: { other_than: 1}
+  validates :shipping_charge_id,   presence: true, numericality: { other_than: 1}
+  validates :price,                presence: true
+  validates :explanation,          presence: true
+  #ジャンルの選択が「--」の時は無効
+
+  has_one :history
   belongs_to :user
   has_one_attached :image
+  belongs_to :genre, :prefecture, :condition, :dateofshipment, :shippingharge
+
 end
