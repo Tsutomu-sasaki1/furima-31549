@@ -10,10 +10,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-   if
     Item.create(item_params)
     redirect_to root_path
-   end
   end
 
   # def
