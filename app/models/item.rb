@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   validates :shipping_charge_id,   presence: true, numericality: { other_than: 1}
   validates :price,                presence: true, inclusion: { in: 300..9999999  }
   validates :explanation,          presence: true
-  #ジャンルの選択が「--」の時は無効
+  validates :image,                presence: true
 
   has_one :history
   has_one_attached :image
