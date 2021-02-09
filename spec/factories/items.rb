@@ -9,7 +9,7 @@ FactoryBot.define do
     date_of_shipment_id  {2}
     shipping_charge_id   {2}
 
-    #user   #userとのアソシエーション
+    user_id = 1   #userとのアソシエーション
 
     after(:build) do |item|
       item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
