@@ -59,13 +59,36 @@ RSpec.describe Item, type: :model do
       end
       
       it "価格の範囲が、¥300~¥9,999,999の間であること" do
-        @item.price = "200"
+        @item.price = "299"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+
+      it "価格の範囲が、¥300~¥9,999,999の間であること" do
+        @item.price = "10000000"
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
       
       it "販売価格は半角数字のみ保存可能であること" do
         @item.price = "３３３３"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+      it "販売価格は全角文字では登録できないこと" do
+        @item.price = "プライス"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+      
+      it "販売価格は半角英数混合では登録できないこと" do
+        @item.price = "price123"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+
+      it "販売価格は半角英語だけでは登録できないこと" do
+        @item.price = "price"
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
