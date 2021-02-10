@@ -22,6 +22,10 @@ class Item < ApplicationRecord
 
   has_one :history
   has_one_attached :image
-  belongs_to :genre, :prefecture, :condition, :dateofshipment, :shippingharge, :user
-
+  belongs_to :genre
+  belongs_to :prefecture 
+  belongs_to :condition 
+  belongs_to :date_of_shipment 
+  belongs_to :shipping_charge 
+  belongs_to :user
 end
