@@ -22,17 +22,17 @@
 
 ## items テーブル
 
-| Column              | Type          | Options                        |
-| ----------------    | ------------- | ------------------------------ |
-| name                | string        | null: false                    |
-| category_id         | integer       | null: false                    |
-| condition_id        | integer       | null: false                    |
-| prefectures_id      | integer       | null: false                    |
-| date_of_shipment_id | integer       | null: false                    |
-| price               | integer       | null: false                    |
-| shipping_charge_id  | integer       | null: false                    |
-| explanation         | text          | null: false                    |
-| user                | references    | null: false, foreign_key: true |
+| Column              | Type          | Options                       |
+| ----------------    | ------------- | ------------------------------|
+| item_name           | string        | null: false                   |
+| category_id         | integer       | null: false                   |
+| condition_id        | integer       | null: false                   |
+| prefectures_id      | integer       | null: false                   |
+| date_of_shipment_id | integer       | null: false                   |
+| price               | integer       | null: false                   |
+| shipping_charge_id  | integer       | null: false                   |
+| explanation         | text          | null: false                   |
+| user                | references    | null: false, foreign_key: true|
 
 ### Association
 
@@ -55,7 +55,7 @@
 
 belongs_to : history
 
-## histories　購入管理(中間)テーブル
+## histories  購入管理(中間)テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
