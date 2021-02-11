@@ -1,14 +1,14 @@
 FactoryBot.define do
   factory :item do
     id                   {Faker::Number.unique.number(1)}
-    item_name            {Faker::Commerce.color}
-    explanation          {Faker::Lorem.sentence}
-    price                {Faker::Number.between(from: 300, to: 9999999)}
-    category_id          {Faker::Number.between(from:2, to:10)}
-    condition_id         {Faker::Number.between(from:2, to:7)}
-    prefectures_id       {Faker::Number.between(from:2, to:47)}
-    date_of_shipment_id  {Faker::Number.between(from:2, to:4)}
-    shipping_charge_id   {Faker::Number.between(from:2, to:3)}
+    item_name            { "サンプル商品" }
+    explanation          { "サンプル商品説明" }
+    price                { 1000 }
+    category_id          { 2 }
+    condition_id         { 2 }
+    prefectures_id       { 2 }
+    date_of_shipment_id  { 2 }
+    shipping_charge_id   { 2 }
     association :user
 
     after(:build) do |item|

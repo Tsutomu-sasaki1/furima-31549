@@ -29,10 +29,22 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Category can't be blank", "Category is not a number")
       end
       
+      it "カテゴリーの情報が1のとき" do
+        @item.category_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Category must be other than 1")
+      end
+
       it "商品の状態についての情報が必須であること" do
         @item.condition_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank", "Condition is not a number")
+      end
+
+      it "商品の状態についての情報が1のとき" do
+        @item.condition_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Condition must be other than 1")
       end
       
       it "発送元の地域についての情報が必須であること" do
@@ -40,11 +52,23 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefectures can't be blank", "Prefectures is not a number")
       end
+
+      it "発送元の地域についての情報が1のとき" do
+        @item.prefectures_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Prefectures must be other than 1")
+      end
       
       it "配送料の負担についての情報が必須であること" do
         @item.shipping_charge_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping charge can't be blank", "Shipping charge is not a number")
+      end
+
+      it "配送料の負担についての情報が1のとき" do
+        @item.shipping_charge_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipping charge must be other than 1")
       end
       
       it "発送までの日数についての情報が必須であること" do
@@ -53,6 +77,12 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Date of shipment can't be blank", "Date of shipment is not a number")
       end
       
+      it "発送までの日数についての情報が1のとき" do
+        @item.date_of_shipment_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Date of shipment must be other than 1")
+      end
+
       it "価格についての情報が必須であること" do
         @item.price = nil
         @item.valid?
