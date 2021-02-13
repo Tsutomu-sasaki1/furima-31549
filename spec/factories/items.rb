@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :item do
-    id                   {Faker::Number.unique.number(1)}
-    item_name            { "サンプル商品" }
-    explanation          { "サンプル商品説明" }
+    id                   { Faker::Number.unique.number(1) }
+    item_name            { 'サンプル商品' }
+    explanation          { 'サンプル商品説明' }
     price                { 1000 }
     category_id          { 2 }
     condition_id         { 2 }
