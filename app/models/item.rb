@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
-  with_options  numericality: { other_than: 1} do
+  with_options  numericality: { other_than: 0} do
     validates :category_id          
     validates :condition_id         
     validates :prefectures_id       
@@ -22,10 +22,10 @@ class Item < ApplicationRecord
 
   has_one :history
   has_one_attached :image
-  belongs_to :genre
-  belongs_to :prefecture 
-  belongs_to :condition 
-  belongs_to :date_of_shipment 
-  belongs_to :shipping_charge 
+  belongs_to_active_hash :genre
+  belongs_to_active_hash :prefecture 
+  belongs_to_active_hash :condition 
+  belongs_to_active_hash :date_of_shipment 
+  belongs_to_active_hash :shipping_charge 
   belongs_to :user
 end
