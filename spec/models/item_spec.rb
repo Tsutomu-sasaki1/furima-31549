@@ -48,13 +48,13 @@ RSpec.describe Item, type: :model do
       end
 
       it '発送元の地域についての情報が必須であること' do
-        @item.prefectures_id = nil
+        @item.prefecturs_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefectures can't be blank", 'Prefectures is not a number')
       end
 
       it '発送元の地域についての情報がのとき' do
-        @item.prefectures_id = 0
+        @item.prefecture_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include('Prefectures must be other than 0')
       end
