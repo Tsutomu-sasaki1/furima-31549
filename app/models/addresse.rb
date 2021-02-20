@@ -2,11 +2,10 @@ class Addresse < ApplicationRecord
   with_options presence: true do
     validates :postal_code
     validates :city
-    validates :address
+    validates :address, format: { with: /\A\d{3}[-]\d{4}\z/ }
     validates :phone_number
-    validates :prefecture_id
+    validates :prefecture_id, numericality: { other_than: 0 }
   end
-  validates :prefecture_id, numericality: { other_than: 0 }
   belongs_to :history
   belongs_to :item
   extend ActiveHash::Associations::ActiveRecordExtensions
