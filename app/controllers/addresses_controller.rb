@@ -4,6 +4,9 @@ class AddressesController < ApplicationController
   before_action :user_check,         only: [:index, :create]
   def index
     @order = Order.new
+    if @item.historie.present?
+      redirect_to root_path
+    end
     
   end
 
@@ -39,10 +42,8 @@ class AddressesController < ApplicationController
   end
 
   def user_check
-    if @item.user.id == current_user.id 
-       redirect_to root_path
-    else
-       redirect_to root_path
+    if current_user.id == @item.user_id
+        redirect_to root_path
     end
   end
     
