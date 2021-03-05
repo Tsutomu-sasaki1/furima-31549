@@ -8,6 +8,8 @@ class Order
     validates :address
     validates :phone_number
     validates :prefecture_id
+    validates :user_id
+    validates :item_id
   end
   
   validates :phone_number, format: { with: /\A\d{11}\z/ }
