@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :find_params, only:        [:show, :update, :edit, :destroy]
   before_action :user_check, only:         [:update, :edit, :destroy]
-  before_action :item_sold_check,only:     [:index, :show]
   def index
     @items = Item.all.order(created_at: :desc)
   end
@@ -55,10 +54,6 @@ class ItemsController < ApplicationController
  
   def user_check
     redirect_to root_path unless @item.user.id == current_user.id
-  end
-
-  def item_sold_check
-    @history = Historie.select("item_id")
   end
 
 end
