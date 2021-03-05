@@ -2,12 +2,9 @@ class AddressesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :item_find,          only: [:index, :create]
   before_action :user_check,         only: [:index, :create]
+  before_action :history_conut,      only: [:index, :create]
   def index
-    @order = Order.new
-    if @item.historie.present?
-      redirect_to root_path
-    end
-    
+    @order = Order.new    
   end
 
   def create
@@ -43,6 +40,12 @@ class AddressesController < ApplicationController
   def user_check
     if current_user.id == @item.user_id
         redirect_to root_path
+    end
+  end
+
+  def history_conut
+    if @item.historie.present?
+      redirect_to root_path
     end
   end
     
