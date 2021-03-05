@@ -5,7 +5,6 @@ const pay = () => {
     e.preventDefault();
     const formResult = document.getElementById("charge-form");
     const formData = new FormData(formResult);
-    // console.log(pay)
 
     const card = {
       number: formData.get("order[number]"),
