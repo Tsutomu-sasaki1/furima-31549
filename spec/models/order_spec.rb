@@ -70,6 +70,10 @@ RSpec.describe Order, type: :model do
         it 'postal_code,city,address,phone_number,building,prefecture_id,のフォーム入力をしtokenの値を取得すると購入出来る' do 
           expect(@order).to be_valid
         end
+        it 'buildingが空でも登録できる' do
+          @order.building = nil
+          expect(@order).to be_valid
+        end
       end
     end
   end

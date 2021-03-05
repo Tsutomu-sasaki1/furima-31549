@@ -7,6 +7,7 @@ FactoryBot.define do
     building        { 'ビル' }
     prefecture_id   { 1 }
     token           {"tok_5435c85088478825734a833b6e28"}
-
+    user_id          {1}
+    item_id          {1}
   end
 end
