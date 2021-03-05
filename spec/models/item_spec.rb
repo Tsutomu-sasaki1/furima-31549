@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Item, type: :model do
   describe '商品出品登録' do
     before do
-      # user = FactoryBot.build(:user)
       @item = FactoryBot.build(:item)
     end
     context '出品登録がうまくいかないとき' do
