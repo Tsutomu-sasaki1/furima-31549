@@ -6,7 +6,7 @@ RSpec.describe Order, type: :model do
       item = FactoryBot.create(:item)
       user = FactoryBot.create(:user)
       @order = FactoryBot.build(:order, item_id: item.id, user_id: user.id)
-      sleep 0.15
+      sleep 0.2
     end
     context '商品購入がうまくいかないとき' do
       it 'postal_codeは空では登録できない' do
