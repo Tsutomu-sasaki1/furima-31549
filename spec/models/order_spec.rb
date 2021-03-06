@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe Order, type: :model do
   describe '商品購入' do
     before do
-      @order = FactoryBot.build(:order)
+      item = FactoryBot.create(:item)
+      user = FactoryBot.create(:user)
+      @order = FactoryBot.build(:order, item_id: item.id, user_id: user.id)
+      sleep 0.15
     end
     context '商品購入がうまくいかないとき' do
       it 'postal_codeは空では登録できない' do
