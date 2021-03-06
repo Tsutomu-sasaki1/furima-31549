@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :histories,         dependent: :destroy
   has_many :items,             dependent: :destroy
+  has_many :addresses
 
   validates :birthday, :nickname, presence: true
 

@@ -44,18 +44,18 @@
 | Column           | Type          | Options                        |
 | ---------------- | ------------- | ------------------------------ |
 | postal_code      | string        | null: false                    |
-| prefectures_id   | integer       | null: false                    |
 | city             | string        | null: false                    |
 | address          | string        | null: false                    |
-| building         | string        |                                |
 | phone_number     | string        | null: false                    |
+| building         | string        |                                |
+| prefectures_id   | integer       | null: false                    |
 | history          | references    | null: false, foreign_key: true |
 
 ### Association
 
 belongs_to : history
 
-## histories  購入管理(中間)テーブル
+## historie  購入管理(中間)テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
