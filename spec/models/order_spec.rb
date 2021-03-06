@@ -50,7 +50,7 @@ RSpec.describe Order, type: :model do
         expect(@order.errors.full_messages).to include( "Phone number is invalid")
       end
       it 'phone_numberは11桁の入力が必須' do
-        @order.phone_number = 11111
+        @order.phone_number = '11111'
         @order.valid?
         expect(@order.errors.full_messages).to include( "Phone number is invalid")
       end
