@@ -54,7 +54,7 @@ RSpec.describe Order, type: :model do
         @order.valid?
         expect(@order.errors.full_messages).to include( "Phone number is invalid")
       end
-      it 'phone_numberは半角英数字の入力が必須' do
+      it 'phone_numberは半角数字の入力が必須' do
         @order.phone_number = '１１１１１１１１１１１'
         @order.valid?
         expect(@order.errors.full_messages).to include( "Phone number is invalid")
